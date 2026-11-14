@@ -65,16 +65,16 @@ So reads that agree with each other are not proof on their own. If Cahul were a 
 
 ## Run
 
-Put the two task files, `observations.csv` and `ring_register.csv`, into `task12/data/`. Then:
+Put the two task files, `observations.csv` and `ring_register.csv`, into `moldova/data/`. Then:
 
 ```
 pip install numpy==2.5.3 pandas==3.0.6
-python task12/assign.py       # stork reads -> task12/out/stork_candidates.csv   (stdlib only)
-python task12/decode.py       # ML + majority vote + leave-one-out -> RHGLWQ       (stdlib only)
-python task12/mask_model.py   # group signatures, masks, check on known rings
-python task12/frame_check.py  # the four frame hypotheses, latitude evidence
-python task12/noise_test.py   # error-composition test, its validation and calibration
-python task12/mask_bird.py    # masks per place / bird / observer                 (stdlib only)
+python moldova/assign.py       # stork reads -> moldova/out/stork_candidates.csv   (stdlib only)
+python moldova/decode.py       # ML + majority vote + leave-one-out -> RHGLWQ       (stdlib only)
+python moldova/mask_model.py   # group signatures, masks, check on known rings
+python moldova/frame_check.py  # the four frame hypotheses, latitude evidence
+python moldova/noise_test.py   # error-composition test, its validation and calibration
+python moldova/mask_bird.py    # masks per place / bird / observer                 (stdlib only)
 ```
 
 Run `assign.py` first: `decode.py`, `frame_check.py` and `noise_test.py` read its output.
