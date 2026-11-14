@@ -20,11 +20,11 @@ r_hedge = ols(d.hedge_m, ["perimeter", "ditch_m"])
 r_ditch = ols(d.ditch_m, ["perimeter"])
 
 fig, ax = plt.subplots(3, 1, figsize=(16, 11))
-for a, r, title in [(ax[0], r_edge, "edge_m (measured by Mariette) - full model  ->  PREDICTION  (flag)"),
-                    (ax[1], r_hedge, "hedge_m (noted by Mariette) - linear in perimeter  ->  SUPERVISOR"),
+for a, r, title in [(ax[0], r_hedge, "hedge_m (noted by Mariette on site) - linear model  ->  SUPERVISION  (flag)"),
+                    (ax[1], r_edge, "edge_m (measured by Mariette) - full model  ->  PREDICTION"),
                     (ax[2], r_ditch, "ditch_m (farmer's declaration) - 0.5 * perimeter  ->  REGRESSION")]:
     a.scatter(d.perimeter, r, s=3)
     a.set_title(title); a.set_xlabel("perimeter 2(L + A/L), m"); a.set_ylabel("residual, m")
 fig.tight_layout()
 fig.savefig(HERE / "fry_ndship.png", dpi=110)
-print("saved fry_ndship.png  ->  SIGMOID_PREDICTION")
+print("saved fry_ndship.png  ->  SIGMOID_SUPERVISION")
